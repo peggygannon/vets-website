@@ -4,12 +4,28 @@ import DateInput from './date-input';
 import FullName from './full-name';
 import MothersMaidenName from './mothers-maiden-name';
 import SocialSecurityNumber from './social-security-number';
-import ContinueButton from './continue-button';
 
 class NameAndGeneralInfoSection extends React.Component {
+  constructor() {
+    super();
+    this.state = { complete: false };
+  }
+
+  handleCompletion() {
+    let childComponents = '';
+
+    for (let i=0; i<childComponents.length; i++) {
+      if (childComponents[i].props.valid == 'false') {
+        this.setState({complete: false});
+        break;
+      }
+      this.setState({complete: true});
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div className="tabs-content">
         <div className="row">
           <div className="small-12 columns">
             <h3>Name and General Information</h3>
@@ -127,7 +143,6 @@ class NameAndGeneralInfoSection extends React.Component {
             </div>
           </div>
         </fieldset>
-        <ContinueButton />
       </div>
     );
   }

@@ -4,6 +4,7 @@ import lodashDeep from 'lodash-deep';
 
 import IntroductionPanel from './introduction-panel.jsx';
 import Nav from './nav.jsx';
+import ContinueButton from './continue-button';
 
 // Add deep object manipulation routines to lodash.
 _.mixin(lodashDeep);
@@ -93,6 +94,7 @@ class HealthCareApp extends React.Component {
           <Nav/>
           <div className="progress-box">
             {children}
+            <ContinueButton/>
           </div>
         </div>
       </div>

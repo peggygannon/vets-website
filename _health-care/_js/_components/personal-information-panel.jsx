@@ -9,7 +9,7 @@ import VeteranAddressSection from './veteran-address-section';
 class PersonalInformationPanel extends React.Component {
   render() {
     return (
-      <div>
+      <div className="form-panel">
         <NameAndGeneralInfoSection
             data={this.props.applicationData.personalInformation}
             onStateChange={
