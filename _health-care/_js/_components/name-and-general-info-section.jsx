@@ -4,6 +4,7 @@ import DateInput from './date-input';
 import FullName from './full-name';
 import MothersMaidenName from './mothers-maiden-name';
 import SocialSecurityNumber from './social-security-number';
+import ContinueButton from './continue-button';
 
 class NameAndGeneralInfoSection extends React.Component {
   render() {
@@ -126,6 +127,7 @@ class NameAndGeneralInfoSection extends React.Component {
             </div>
           </div>
         </fieldset>
+        <ContinueButton />
       </div>
     );
   }
