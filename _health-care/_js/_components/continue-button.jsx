@@ -1,22 +1,26 @@
 import React from 'react';
-import _ from 'lodash';
 
+/**
+ * A component for the continue button to navigate through the sections of questions.
+ */
 class ContinueButton extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = { hasError: false };
-  //   this.handleChange = this.handleChange.bind(this);
-  // }
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  componentWillMount() {
-    this.id = _.uniqueId('date-input-');
+  handleClick() {
+    this.props.onButtonClick();
   }
 
   render() {
     return (
       <div className="row progress-buttons">
         <div className="small-8 columns">
-          <button id="continueButton" className="usa-button-primary">Continue</button>
+          <button
+              className="usa-button-primary"
+              id="continueButton"
+              onClick={this.handleClick}>Continue</button>
         </div>
       </div>
     );

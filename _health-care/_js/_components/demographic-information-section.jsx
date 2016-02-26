@@ -2,6 +2,9 @@ import React from 'react';
 
 class DemographicInformationSection extends React.Component {
   render() {
+    if (!this.props.data.active) {
+      return false;
+    }
     return (
       <div>
         <div className="row">

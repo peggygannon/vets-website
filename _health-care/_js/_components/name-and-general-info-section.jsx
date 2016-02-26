@@ -6,24 +6,23 @@ import MothersMaidenName from './mothers-maiden-name';
 import SocialSecurityNumber from './social-security-number';
 
 class NameAndGeneralInfoSection extends React.Component {
-  constructor() {
-    super();
-    this.state = { complete: false };
-  }
 
-  handleCompletion() {
-    let childComponents = '';
+  // isComplete() {
+  //   let childComponents = '';
 
-    for (let i=0; i<childComponents.length; i++) {
-      if (childComponents[i].props.valid == 'false') {
-        this.setState({complete: false});
-        break;
-      }
-      this.setState({complete: true});
-    }
-  }
+  //   for (let i=0; i<childComponents.length; i++) {
+  //     if (!childComponents[i].isValid()) {
+  //       return false;
+  //       break;
+  //     }
+  //     return true;
+  //   }
+  // }
 
   render() {
+    if (!this.props.data.active) {
+      return false;
+    }
     return (
       <div className="tabs-content">
         <div className="row">

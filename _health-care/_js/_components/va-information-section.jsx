@@ -2,6 +2,9 @@ import React from 'react';
 
 class VaInformationSection extends React.Component {
   render() {
+    if (!this.props.data.active) {
+      return false;
+    }
     return (
       <div className="row">
         <div className="small-12 columns">

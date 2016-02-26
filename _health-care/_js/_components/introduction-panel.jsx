@@ -11,6 +11,9 @@ class IntroductionPanel extends React.Component {
   }
 
   render() {
+    if (!this.props.data.active) {
+      return false;
+    }
     return (
       <div className="usa-form-width">
         <div className="row">

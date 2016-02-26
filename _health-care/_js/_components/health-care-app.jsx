@@ -13,26 +13,51 @@ class HealthCareApp extends React.Component {
   constructor() {
     super();
     this.publishStateChange = this.publishStateChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
     let initialState = {
       applicationData: {
-        introduction: {},
+        introduction: {
+          introduction: {
+            active: true
+          }
+        },
 
         personalInformation: {
-          fullName: {
-            first: 'William',
-            middle: '',
-            last: 'Shakespeare',
-            suffix: '',
+          nameAndGeneralInfo: {
+            active: false,
+
+            fullName: {
+              first: 'William',
+              middle: '',
+              last: 'Shakespeare',
+              suffix: '',
+            },
+
+            mothersMaidenName: 'Arden',
+
+            socialSecurityNumber: '999-99-9999',
+
+            dateOfBirth: {
+              month: '1',
+              day: '15',
+              year: '1997',
+            }
           },
 
-          mothersMaidenName: 'Arden',
+          vaInformation: {
+            active: false
+          },
 
-          socialSecurityNumber: '999-99-9999',
+          additionalInformation: {
+            active: false
+          },
 
-          dateOfBirth: {
-            month: '1',
-            day: '15',
-            year: '1997',
+          demographicInformation: {
+            active: false
+          },
+
+          veteranAddress: {
+            active: false
           }
         }
       }
@@ -68,6 +93,28 @@ class HealthCareApp extends React.Component {
     this.setState({ applicationData: newApplicationData });
   }
 
+  handleButtonClick() {
+    // get all the sections
+    const panels = Object.keys(this.state.applicationData);
+    const sections = [];
+    for (let i=0; i<panels.length; i++) {
+      let sectionsWithinPanel = Object.keys(this.state.applicationData[panels[i]]);
+      for (let i=0; i<sectionsWithinPanel.length; i++) {
+        sections.push(sectionsWithinPanel[i]);
+      }
+    }
+
+    // set the active section and the next section
+    // let activeSection = _.findKey(panels, {active: true});
+    // let nextSection = '';
+
+    // change the active one's state to inactive
+    // this.state.applicationData[activeSection].active = false;
+
+    // make the next one active
+    // this.state.applicationData[nextSection].active = true;
+  }
+
   render() {
     let children = this.props.children;
 
@@ -93,8 +140,10 @@ class HealthCareApp extends React.Component {
         <div className="small-12 columns">
           <Nav/>
           <div className="progress-box">
-            {children}
-            <ContinueButton/>
+            <div className="form-panel">
+              {children}
+              <ContinueButton onButtonClick={this.handleButtonClick}/>
+            </div>
           </div>
         </div>
       </div>

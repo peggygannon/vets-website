@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Nav extends React.Component {
+  // TODO: Link this navigation to continue button navigation
+  // TODO: Update active states based on selected tab
+
   render() {
     return (
       <dl className="tabs progess-menu">
