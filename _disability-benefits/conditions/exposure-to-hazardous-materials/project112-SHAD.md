@@ -25,7 +25,7 @@ If you participated in the chemical and biological warfare testing associated wi
 <div class="call-out" markdown="1">
 ### Are you eligible for disability benefits?
 
-Yes if:
+Yes, if:
 
 -	You participated in Projects 112 or SHAD testing.
 -	You have a condition believed to be caused by this testing.
